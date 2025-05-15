@@ -2,8 +2,8 @@ import About from "./components/About";
 import Hero from "./components/Hero";
 import NavBar from "./components/Navbar";
 import Features from "./components/Features";
-import Story from "./components/Story";
-import Projects from "./components/Projects"; // Import the new Projects component
+import Experience from "./components/Experience"; // Import the new Experience component
+import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
@@ -14,8 +14,8 @@ function App() {
       <Hero />
       <About />
       <Features id="skills" /> {/* Skills section */}
-      <Story id="experience" /> {/* Experience section */}
-      <Projects /> {/* Add the Projects component here */}
+      <Experience /> {/* Replace Story with Experience component */}
+      <Projects />
       <Contact />
       <Footer />
     </main>

@@ -141,6 +141,39 @@ body {
   .contact-clip-path-2 {
     clip-path: polygon(29% 15%, 85% 30%, 50% 100%, 10% 64%);
   }
+
+  /* Experience section styles */
+  .experience-card {
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+    will-change: transform, box-shadow;
+  }
+
+  .experience-card:hover {
+    transform: translateY(-5px) scale(1.01);
+  }
+
+  .experience-logo {
+    position: relative;
+    box-shadow: 0 0 15px rgba(87, 36, 255, 0.2);
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .experience-card:hover .experience-logo {
+    transform: rotate(5deg) scale(1.1);
+    box-shadow: 0 0 20px rgba(87, 36, 255, 0.4);
+  }
+
+  .experience-indicator {
+    transition: opacity 0.3s ease;
+  }
+
+  .experience-card:hover .experience-indicator {
+    opacity: 1;
+  }
 }
 
 .indicator-line {
