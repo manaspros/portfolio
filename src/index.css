@@ -11,6 +11,32 @@ body {
   font-family: "General Sans", sans-serif;
 }
 
+/* Global scrollbar fix */
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #121212;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(85, 66, 255, 0.5);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(85, 66, 255, 0.8);
+}
+
 @layer base {
   @font-face {
     font-family: "circular-web";

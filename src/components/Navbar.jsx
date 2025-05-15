@@ -8,7 +8,7 @@ import Button from "./Button";
 
 const navItems = ["About", "Skills", "Projects", "Experience", "Contact"];
 
-const NavBar = () => {
+const NavBar = ({ openResumeModal }) => {
   // State for toggling audio and visual indicator
   const [isAudioPlaying, setIsAudioPlaying] = useState(false);
   const [isIndicatorActive, setIsIndicatorActive] = useState(false);
@@ -116,6 +116,13 @@ const NavBar = () => {
                   }}
                 />
               ))}
+            </button>
+
+            <button
+              onClick={openResumeModal}
+              className="ml-4 rounded-full bg-violet-600 px-5 py-2 text-sm font-medium text-white transition-all hover:bg-violet-700"
+            >
+              View Resume
             </button>
           </div>
         </nav>

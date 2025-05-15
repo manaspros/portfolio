@@ -8,11 +8,22 @@ const socialLinks = [
 ];
 
 const Footer = () => {
+  const scrollToSection = (sectionId) => {
+    event.preventDefault();
+    const element = document.getElementById(sectionId);
+    if (element) {
+      window.scrollTo({
+        top: element.offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
-    <footer className="w-screen bg-[#5542ff] py-4 text-black">
+    <footer className="bg-[#5542ff] py-4 text-black">
       <div className="container mx-auto flex flex-col items-center justify-between gap-4 px-4 md:flex-row">
         <p className="text-center text-sm font-light md:text-left">
-          ©Manas Choudhary 2024. All rights reserved
+          ©Manas Choudhary 2025. All rights reserved
         </p>
 
         <div className="flex justify-center gap-4  md:justify-start">
@@ -31,7 +42,8 @@ const Footer = () => {
 
         <a
           href="#about"
-          className="text-center text-sm font-light hover:underline md:text-right"
+          onClick={(e) => scrollToSection('about')}
+          className="text-center text-sm font-light hover:underline md:text-right cursor-pointer"
         >
           Back to Top
         </a>
