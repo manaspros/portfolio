@@ -8,7 +8,7 @@ import { BentoTilt, BentoCard } from "./Features";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ExperienceCard = ({ title, company, period, description, index, video, isMain }) => {
+const ExperienceCard = ({ title, company, period, description, index, video, isMain, isImage }) => {
     const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
     const [hoverOpacity, setHoverOpacity] = useState(0);
     const cardRef = useRef(null);
@@ -49,14 +49,22 @@ const ExperienceCard = ({ title, company, period, description, index, video, isM
             className={`relative ${isMain ? 'w-full' : 'w-full h-full'}`}
         >
             <div className="relative size-full overflow-hidden rounded-md border-hsla">
-                {/* Video background */}
-                <video
-                    src={video}
-                    loop
-                    muted
-                    autoPlay
-                    className="absolute left-0 top-0 size-full object-cover object-center opacity-40"
-                />
+                {/* Media background - either image or video */}
+                {isImage ? (
+                    <img
+                        src={video} // Using the same 'video' prop name for consistency
+                        alt={`${company} - ${title}`}
+                        className={`absolute left-0 top-0 size-full object-cover object-center ${isMain ? '' : 'opacity-40'}`}
+                    />
+                ) : (
+                    <video
+                        src={video}
+                        loop
+                        muted
+                        autoPlay
+                        className={`absolute left-0 top-0 size-full object-cover object-center ${isMain ? '' : 'opacity-40'}`}
+                    />
+                )}
 
                 {/* Content */}
                 <div className="relative z-10 flex size-full flex-col justify-between p-5 md:p-7 text-blue-50">
@@ -106,25 +114,28 @@ const Experience = () => {
 
     const experiences = [
         {
-            title: "Frontend Developer Intern",
-            company: "TechFusion Solutions",
-            period: "Jun 2023 - Aug 2023",
-            description: "Developed responsive user interfaces using React.js and implemented state management with Redux. Collaborated with UX/UI designers to create intuitive web applications with modern animations and transitions.",
-            video: "videos/experience-1.mp4"
+            title: "Research Intern",
+            company: "IIT Jodhpur",
+            period: "May 2025 - Current",
+            description: "Selected for a summer internship under the guidance of Dr. Bhivraj Suthar at the School of Artificial Intelligence & Data Science, IIT Jodhpur. Working on research and practical applications in AI and Data Science.",
+            video: "img/IITJodhpur.jpeg",
+            isImage: true // Specify this is a video
         },
         {
-            title: "Machine Learning Researcher",
-            company: "AI Research Lab, IIIT",
-            period: "Sep 2023 - Present",
-            description: "Conducting research on computer vision algorithms and contributing to projects involving image classification and object detection. Implementing deep learning models using PyTorch and TensorFlow.",
-            video: "videos/experience-2.mp4"
+            title: "Software Development Engineer",
+            company: "Sigmoyd",
+            period: "Mar 2025 - Present",
+            description: "Built the frontend for Sigmoyd's AI agent-driven workflow automation platform using React, TypeScript, and Tailwind CSS.",
+            video: "img/sigmoyd_logo.jpeg", // Change to image path
+            isImage: true // Specify this is an image
         },
         {
-            title: "Full Stack Developer",
-            company: "Student Innovation Club",
-            period: "Jan 2023 - Present",
-            description: "Building web applications with MERN stack for campus initiatives. Designing database schemas, implementing RESTful APIs, and creating interactive frontend interfaces with modern JavaScript frameworks.",
-            video: "videos/experience-3.mp4"
+            title: "Tribal Intern - Govt. Project",
+            company: "Website Developer ",
+            period: "Jan 2025 - May 2025",
+            description: "Developed a web-based solution using ReactJS and Node.js to improve tribal resource management, integrating databases for efficient tracking and enhancing transparency through a user-friendly interface.",
+            video: "img/logo2.png", // Change to image path
+            isImage: true // Specify this is an image
         },
     ];
 
