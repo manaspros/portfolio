@@ -10,6 +10,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ResumeModal from './components/ResumeModal';
 import CursorEffect from './components/CursorEffect';
+import Terminal from './components/Terminal';
 
 function App() {
   const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
@@ -41,6 +42,7 @@ function App() {
       <Projects />
       <Contact />
       <Footer />
+      <Terminal />
 
       {/* Resume Modal */}
       <ResumeModal

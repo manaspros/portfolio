@@ -121,6 +121,7 @@ const NavBar = ({ openResumeModal }) => {
             <div className="relative ml-6 group">
               <button
                 onClick={openResumeModal}
+                data-resume-button
                 className="relative z-10 rounded-full bg-gradient-to-r from-violet-600 to-blue-500 px-5 py-2.5 text-sm font-medium text-white overflow-hidden transition-all hover:shadow-lg hover:shadow-violet-500/40"
               >
                 <span className="relative z-10 flex items-center gap-2">
