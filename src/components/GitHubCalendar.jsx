@@ -141,7 +141,7 @@ const GitHubCalendar = () => {
         monthsToShow.forEach((month, index) => {
             visibleMonths.push({
                 label: months[month],
-                position: (index * 20) // Evenly space them
+                position: (index * 13) // Evenly space them
             });
         });
     }
@@ -220,7 +220,7 @@ const GitHubCalendar = () => {
                                 {visibleMonths.map((month, i) => (
                                     <div
                                         key={i}
-                                        className="absolute top-0 text-sm font-medium text-violet-300"
+                                        className="absolute px-20 pl-64 top-0 text-sm font-medium text-violet-300"
                                         style={{ left: `${month.position}%` }}
                                     >
                                         {month.label}
