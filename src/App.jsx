@@ -9,6 +9,7 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ResumeModal from './components/ResumeModal';
+import CursorEffect from './components/CursorEffect';
 
 function App() {
   const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
@@ -31,8 +32,9 @@ function App() {
 
   return (
     <main className="relative min-h-screen">
+      <CursorEffect />
       <NavBar openResumeModal={openResumeModal} />
-      <Hero />
+      <Hero openResumeModal={openResumeModal} />
       <About openResumeModal={openResumeModal} />
       <Features id="skills" />
       <Experience />
@@ -44,7 +46,7 @@ function App() {
       <ResumeModal
         isOpen={isResumeModalOpen}
         onClose={closeResumeModal}
-        resumeImageSrc="/pdf/resume.pdf"
+        resumeImageSrc="/img/manas.pdf"
       />
     </main>
   );

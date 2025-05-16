@@ -85,13 +85,24 @@ const ResumeModal = ({ isOpen, onClose, resumeImageSrc }) => {
                     </div>
                 </div>
 
-                {/* Resume image with scroll */}
-                <div className="max-h-[calc(90vh-5rem)] overflow-auto p-2 md:p-6">
-                    <img
-                        src={resumeImageSrc}
-                        alt="Resume"
-                        className="mx-auto w-full rounded-md shadow-md"
-                    />
+                {/* PDF viewer with embed */}
+                <div className="h-[calc(90vh-5rem)] w-full bg-white p-0">
+                    <object
+                        data={resumeImageSrc}
+                        type="application/pdf"
+                        className="h-full w-full"
+                    >
+                        <p className="p-5 text-center">
+                            Your browser doesn't support PDF viewing.
+                            <a
+                                href={resumeImageSrc}
+                                download
+                                className="ml-2 text-violet-500 underline"
+                            >
+                                Download the PDF
+                            </a>
+                        </p>
+                    </object>
                 </div>
             </div>
         </div>

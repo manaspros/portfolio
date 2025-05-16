@@ -6,7 +6,8 @@ import { TiLocationArrow } from "react-icons/ti";
 
 import Button from "./Button";
 
-const navItems = ["About", "Skills", "Projects", "Experience", "Contact"];
+// Update the order to match your page sections
+const navItems = ["About", "Skills", "Experience", "Projects", "Contact"];
 
 const NavBar = ({ openResumeModal }) => {
   // State for toggling audio and visual indicator
@@ -75,9 +76,10 @@ const NavBar = ({ openResumeModal }) => {
 
             <Button
               id="product-button"
-              title="Products"
+              title="Resume"
               rightIcon={<TiLocationArrow />}
               containerClass="bg-blue-50 md:flex hidden items-center justify-center gap-1"
+              onClick={openResumeModal}
             />
           </div>
 
