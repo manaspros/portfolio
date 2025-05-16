@@ -6,6 +6,7 @@ import NavBar from "./components/Navbar";
 import Features from "./components/Features";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
+import GitHubCalendar from "./components/GitHubCalendar"; // Import GitHubCalendar
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ResumeModal from './components/ResumeModal';
@@ -40,6 +41,7 @@ function App() {
       <Features id="skills" />
       <Experience />
       <Projects />
+      <GitHubCalendar /> {/* Add GitHubCalendar here */}
       <Contact />
       <Footer />
       <Terminal />
