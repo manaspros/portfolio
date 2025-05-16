@@ -123,8 +123,9 @@ const Features = ({ id }) => (
         />
       </BentoTilt>
 
-      <div className="grid h-[105vh] w-full grid-cols-2 grid-rows-2 gap-2">
-        <BentoTilt className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2">
+      {/* Fixed grid layout for mobile */}
+      <div className="grid w-full grid-cols-1 gap-5 md:h-[105vh] md:grid-cols-2 md:grid-rows-2 md:gap-2">
+        <BentoTilt className="border-hsla h-80 overflow-hidden rounded-md md:h-auto md:row-span-2">
           <BentoCard
             src="videos/feature-2.mp4"
             title={
@@ -136,7 +137,7 @@ const Features = ({ id }) => (
           />
         </BentoTilt>
 
-        <BentoTilt className="bento-tilt_1 row-span-1 ms-32 md:col-span-1 md:ms-0">
+        <BentoTilt className="border-hsla h-80 overflow-hidden rounded-md md:h-auto">
           <BentoCard
             src="videos/feature-3.mp4"
             title={
@@ -148,7 +149,7 @@ const Features = ({ id }) => (
           />
         </BentoTilt>
 
-        <BentoTilt className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
+        <BentoTilt className="border-hsla h-80 overflow-hidden rounded-md md:h-auto">
           <BentoCard
             src="videos/feature-4.mp4"
             title={

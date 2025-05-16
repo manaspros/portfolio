@@ -70,16 +70,13 @@ const NavBar = ({ openResumeModal }) => {
     >
       <header className="absolute top-1/2 w-full -translate-y-1/2">
         <nav className="flex size-full items-center justify-between p-4">
-          {/* Logo and Product button */}
+          {/* Logo */}
           <div className="flex items-center gap-7">
-            <img src="/img/logo.png" alt="logo" className="w-10" />
-
-            <Button
-              id="product-button"
-              title="Resume"
-              rightIcon={<TiLocationArrow />}
-              containerClass="bg-blue-50 md:flex hidden items-center justify-center gap-1"
-              onClick={openResumeModal}
+            <img
+              src="/img/logo.png"
+              alt="logo"
+              className="w-10 cursor-pointer transition-transform hover:scale-110"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             />
           </div>
 
@@ -120,12 +117,20 @@ const NavBar = ({ openResumeModal }) => {
               ))}
             </button>
 
-            <button
-              onClick={openResumeModal}
-              className="ml-4 rounded-full bg-violet-600 px-5 py-2 text-sm font-medium text-white transition-all hover:bg-violet-700"
-            >
-              View Resume
-            </button>
+            {/* New creative Resume button */}
+            <div className="relative ml-6 group">
+              <button
+                onClick={openResumeModal}
+                className="relative z-10 rounded-full bg-gradient-to-r from-violet-600 to-blue-500 px-5 py-2.5 text-sm font-medium text-white overflow-hidden transition-all hover:shadow-lg hover:shadow-violet-500/40"
+              >
+                <span className="relative z-10 flex items-center gap-2">
+                  <TiLocationArrow className="animate-pulse" />
+                  <span className="group-hover:animate-pulse">Resume</span>
+                </span>
+                <span className="absolute inset-0 -z-10 bg-gradient-to-r from-blue-600 to-violet-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+              </button>
+              <span className="absolute -inset-1 rounded-full bg-gradient-to-r from-violet-400 to-blue-400 opacity-70 blur-sm group-hover:opacity-100 group-hover:blur transition-all duration-500"></span>
+            </div>
           </div>
         </nav>
       </header>
